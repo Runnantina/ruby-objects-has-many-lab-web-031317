@@ -22,13 +22,11 @@ class Author
 
 	def add_post_by_title(title)
 		new_post = Post.new(title)
-		self.posts << new_post
+		self.posts << new_post # new_post was the key to my failures
     	new_post.author = self
     	@@post_count += 1
 		
-	end
-
-	# binding.pry
+	end 
 
 	def posts
 		@posts
@@ -36,7 +34,6 @@ class Author
 
 
 	def self.post_count
-		# return the whole total
 		@@post_count
 	end
 	
